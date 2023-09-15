@@ -1,0 +1,6 @@
+namespace: appd-cloud-demo
+
+image:
+  repository: dresseljo/ecommerce-adservice
+  tag: <+artifact.tag>
+  pullPolicy: Always

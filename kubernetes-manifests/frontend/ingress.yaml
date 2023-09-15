@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: ingress-frontend
+  namespace: appd-cloud-demo
+spec:
+  rules:
+    - host: a5c5da65455134b8185490aa6edba558-22a0dbff28683902.elb.us-east-1.amazonaws.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: frontend
+                port:
+                  number: 8080
+            path: /ecommerce(/|$)(.*)
+            pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+      - hostname: a5c5da65455134b8185490aa6edba558-22a0dbff28683902.elb.us-east-1.amazonaws.com

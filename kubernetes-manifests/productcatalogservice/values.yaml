@@ -1,0 +1,10 @@
+namespace: appd-cloud-demo
+
+harness:
+  sdkKey: "<+secrets.getValue('harnesssdkkey')>"
+
+image:
+  repository: dresseljo/ecommerce-productcatalogservice
+  tag: <+artifact.tag>
+  pullPolicy: Always
+  

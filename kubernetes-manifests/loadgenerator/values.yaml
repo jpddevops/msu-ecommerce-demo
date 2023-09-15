@@ -1,0 +1,7 @@
+namespace: appd-cloud-demo
+
+image:
+  repository: dresseljo/ecommerce-loadgenerator
+  tag: <+artifact.tag>
+  pullPolicy: Always
+    

@@ -1,0 +1,6 @@
+namespace: appd-cloud-demo
+
+image:
+  repository: dresseljo/ecommerce-checkoutservice
+  tag: <+artifact.tag>
+  pullPolicy: Always
